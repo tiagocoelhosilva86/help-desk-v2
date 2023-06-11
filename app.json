@@ -1,0 +1,38 @@
+{
+  "expo": {
+    "name": "help-desk",
+    "slug": "help-desk",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/imagens/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/imagens/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/imagens/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.tiagocoelho.helpdesk"
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/imagens/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "689e797c-103a-4c0f-ba26-085868af6746"
+      }
+    }
+  }
+}
