@@ -1,21 +1,20 @@
 import React, { useState } from "react";
 import {
+  ScrollView,
   StyleSheet,
-  Image,
-  View,
   Text,
   TextInput,
   TouchableOpacity,
-  ScrollView,
+  View
 } from "react-native";
 
-import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import Loading from "../../components/loading";
 import { useNavigation } from "@react-navigation/native";
-import LottieView from  "lottie-react-native";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import LottieView from "lottie-react-native";
+import { Controller, useForm } from "react-hook-form";
+import * as yup from "yup";
+import Loading from "../../components/loading";
 
 const schema = yup.object({
   email: yup
@@ -74,17 +73,17 @@ const Login = () => {
       });
   }
 
-  function handlePrimeiroAcesso() {
-    console.log("Cadastrar Usuario");
+  // function handlePrimeiroAcesso() {
+  //   console.log("Cadastrar Usuario");
 
-    navigation.navigate("Cadastro");
-  }
+  //   navigation.navigate("Cadastro");
+  // }
 
-  function handleEsqueceuSuaSenha() {
-    console.log("Esqueceu Sua Senha");
+  // function handleEsqueceuSuaSenha() {
+  //   console.log("Esqueceu Sua Senha");
 
-    navigation.navigate("RecuperarSenha");
-  }
+  //   navigation.navigate("RecuperarSenha");
+  // }
 
   return (
     <View style={styles.container}>
@@ -93,10 +92,6 @@ const Login = () => {
         <View style={styles.containerForm}>
           <View>
           <LottieView style={styles.LottieView} source={require("../../assets/imagens/helpdesk-blue.json")} loop autoPlay />
-            {/* <Image
-              source={require("../../assets/imagens/helpDesk.png")}
-              style={styles.logo}
-            /> */}
           </View>
           <Controller
             control={control}
@@ -149,19 +144,19 @@ const Login = () => {
             <Text style={styles.labelError}>{errors.senha?.message}</Text>
           )}
 
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={styles.buttonEsqueceuSuaSenha}
             onPress={handlePrimeiroAcesso}
           >
             <Text style={styles.titleInput}>Primeiro Acesso</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={styles.buttonPrimeiroAcesso}
             onPress={handleEsqueceuSuaSenha}
           >
             <Text style={styles.titleInput}>Esqueceu a Senha</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
 
           <TouchableOpacity
             style={styles.button}

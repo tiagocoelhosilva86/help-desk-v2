@@ -1,12 +1,11 @@
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 import {
-  StyleSheet,
   Image,
-  Text,
-  View,
   ScrollView,
-  TouchableOpacity,
+  StyleSheet,
+  Text,
+  View
 } from "react-native";
 
 const Informacao = () => {
@@ -24,7 +23,8 @@ const Informacao = () => {
               style={styles.logo}
             />
             <View style={styles.containerTexto}>
-                <Text style={styles.textoIcon}>Verção do APP v 1.0.1</Text>
+                <Text style={styles.textoIcon}>Verção Usuário</Text>
+                <Text style={styles.textoIcon}>APP v 1.0.1</Text>
             </View>
             
           </View>

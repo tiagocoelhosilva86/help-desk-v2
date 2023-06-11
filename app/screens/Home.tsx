@@ -18,25 +18,25 @@ const Home = () => {
     navigation.navigate("AbrirChamado");
   };
 
-  const handleListaChamados = () => {
-    console.log("Entrou lista de chamados");
-    // console.log(getChamados())
-    navigation.navigate("ListaChamados");
-  };
+  // const handleListaChamados = () => {
+  //   console.log("Entrou lista de chamados");
+  //   // console.log(getChamados())
+  //   navigation.navigate("ListaChamados");
+  // };
 
-  const handleRelatorioChamados = (data) => {
-    console.log("Entrou");
-    console.log(data);
+  // const handleRelatorioChamados = (data) => {
+  //   console.log("Entrou");
+  //   console.log(data);
 
-    navigation.navigate("RelatorioChamados");
-  };
+  //   navigation.navigate("RelatorioChamados");
+  // };
 
-  const handleAdicionarUsuario = (data) => {
-    console.log("Entrou");
-    console.log(data);
+  // const handleAdicionarUsuario = (data) => {
+  //   console.log("Entrou");
+  //   console.log(data);
 
-    navigation.navigate("AdicionarUsuario");
-  };
+  //   navigation.navigate("AdicionarUsuario");
+  // };
 
   const handleConfiguracao = (data) => {
     console.log("Entrou");
@@ -59,7 +59,7 @@ const Home = () => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.containerMenu}>
+        {/* <View style={styles.containerMenu}>
           <TouchableOpacity style={styles.butom} onPress={handleListaChamados}>
             <LottieView
               style={styles.LottieView}
@@ -69,9 +69,9 @@ const Home = () => {
             />
             <Text style={styles.textoIcon}>Lista de Chamados</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
 
-        <View style={styles.containerMenu}>
+        {/* <View style={styles.containerMenu}>
           <TouchableOpacity
             style={styles.butom}
             onPress={handleRelatorioChamados}
@@ -84,7 +84,7 @@ const Home = () => {
             />
             <Text style={styles.textoIcon}>Relatorio de Chamados</Text>
           </TouchableOpacity>
-        </View>
+        </View> */}
         <View style={styles.containerMenu}>
           <TouchableOpacity style={styles.butom} onPress={handleConfiguracao}>
             <LottieView
