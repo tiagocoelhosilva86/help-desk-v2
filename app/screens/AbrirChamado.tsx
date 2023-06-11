@@ -297,8 +297,7 @@ const AbrirChamado = () => {
             <View style={{ padding: 10 }}>
               {image ? (
                 <Image
-                  source={{ uri: image }}
-                  style={{ width: 200, height: 200 }}
+                  style={{ width: 200, height: 200 }} uri={{ image }}
                 />
               ) : null}
             </View>
