@@ -76,7 +76,7 @@ const AbrirChamado = () => {
     setLoading(true);
     let url;
     try {
-      const storageRef = ref(getStorage(), `Chamados/image-${Date.now}`);
+      const storageRef = ref(getStorage(), `Chamados/image-${Date.now()}`);
       await uploadBytes(storageRef, imagemChamado);
       url = await getDownloadURL(storageRef);
     } catch (error) {
@@ -91,7 +91,6 @@ const AbrirChamado = () => {
     })
       .then((dados) => {
         console.log(dados.id);
-
         setLoading(false);
         setModalVisible(true);
         console.log("documento enviado");
