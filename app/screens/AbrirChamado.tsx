@@ -117,7 +117,8 @@ const AbrirChamado = () => {
 
   const escolherImagemDaGaleria = async () => {
     let result = (await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      base64: true,
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
@@ -125,18 +126,15 @@ const AbrirChamado = () => {
 
     console.log(result);
 
-    setImage(result.assets ? result.assets[0].uri : undefined);
+    // setImage(result.assets ? result.assets[0].uri : undefined);
 
     if (!result.canceled) {
-      setImage(result.assets[0].uri);
+      setImage(result.assets[0].base64 as string);
       await uploadImageAsync(result.assets[0].uri);
-      setInterval(() => {
-        setLoading(false);
-      }, 2000);
-    } else {
-      setImage(undefined);
-      setInterval(() => {}, 2000);
     }
+    setInterval(() => {
+      setLoading(false);
+    }, 2000);
   };
 
   const uploadImageAsync = async (uri: string) => {
@@ -295,7 +293,12 @@ const AbrirChamado = () => {
             }}
           >
             <View style={{ padding: 10 }}>
-              {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+              {image && (
+                <Image
+                  source={{ uri: `data:image/png;base64,${image}` }}
+                  style={{ width: 200, height: 200, resizeMode: 'contain' }}
+                />
+              )}
             </View>
 
             <View>
@@ -325,7 +328,7 @@ const AbrirChamado = () => {
                   <Text style={styles.modalText}>
                     Chamado Realizado com Sucesso!
                   </Text>
-                  <TouchableOpacity  onPress={handleHome}>
+                  <TouchableOpacity onPress={handleHome}>
                     <LottieView
                       style={styles.LottieView}
                       source={require("../../assets/imagens/confirmation")}
